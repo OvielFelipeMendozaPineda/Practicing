@@ -12,10 +12,12 @@ def isNum(flag):
             print("Entrada inválida.")
         print(sorted(numArray))
         print(sorted(numArray, reverse=True))
+        
 
 flag = True
 while(flag):
     try:
         isNum(flag)
+        flag = False
     except:
         print("Entrada inválida.")
