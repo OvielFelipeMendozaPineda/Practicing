@@ -4,7 +4,7 @@ opcUser = 0
 flag = True
 coins = 0
 # Funcion para mostrar los productos
-def showArrayProducts(flag):
+def showArrayProducts():
     cont = 1 
     print("Ingrese un número.")
     for i in arrayProducts[0]:
@@ -43,7 +43,7 @@ def checkoutPayment (opcUser,arrayProducts,arrayCoins):
         return diff, cantPagada, coin10, coin50
 # AlgortimoPrincipal
 while(flag):
-    showArrayProducts(flag)
+    showArrayProducts()
     try:
         opcUser = int(input("\n"))
         if 0 < opcUser <= len(arrayProducts[0]):
