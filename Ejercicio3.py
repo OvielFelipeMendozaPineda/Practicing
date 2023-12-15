@@ -1,29 +1,20 @@
-from math import trunc
 arrayProducts = [['A','B','C'], [270, 340, 390]]
 arrayCoins = [10,50,100]
-cont = 1 
 opcUser = 0
 flag = True
 coins = 0
-cantCoins10 = 0
-cantCoins50 = 0
-cantCoins100 = 0
-cantPagada = 0 
-coin10 = 0
-coin50 = 0
-change = 0
-diff = 0
 # Funcion para mostrar los productos
 def showArrayProducts(flag):
-    global cont
+    cont = 1 
     print("Ingrese un número.")
     for i in arrayProducts[0]:
         print(f'\t{cont}. {i}')
         cont = cont + 1
 # Funcion para carlcular el vuelto
-def checkoutPayment (opcUser,cantPagada,arrayProducts,arrayCoins):
-        global cantCoins10, cantCoins50, cantCoins100, diff, coin50, change, coin10
+def checkoutPayment (opcUser,arrayProducts,arrayCoins):
+        coin10 = coin50 = change = cantCoins10 = cantCoins50 = cantCoins100 = diff = 0
         print(f'Precio a pagar es de: ${arrayProducts[1][opcUser - 1]}.')
+        cantPagada = 0 
         while (cantPagada < arrayProducts[1][opcUser - 1]):
             cont = 1
             print("Ingrese moneda.")
@@ -36,19 +27,20 @@ def checkoutPayment (opcUser,cantPagada,arrayProducts,arrayCoins):
                 print("Entrada inválida.")
                 continue
             if coins == 1:
-                cantCoins10 = cantCoins10 + 10
+                cantCoins10 += + 10
             elif coins == 2:
-                cantCoins50 = cantCoins50 + 50
+                cantCoins50 += + 50
             elif coins == 3:
-                cantCoins100 = cantCoins100 + 100
+                cantCoins100 += + 100
             cantPagada = cantCoins10 + cantCoins50 + cantCoins100
             print(f'Usted lleva ingresado: ${cantPagada}')
             if cantPagada >= (arrayProducts[1][opcUser - 1]):
                 diff = cantPagada - arrayProducts[1][opcUser - 1]
-                coin50 = trunc(diff / 50)
+                coin50 = diff // 50
                 change = diff % 50
-                coin10 = trunc(change / 10) 
-                print(f'Su vuelto es de: ${diff}\n $50x{coin50}\n $10x{coin10}')
+                coin10 = change // 10
+                print(f'Su vuelto es de: ${diff}\n\t $50x {coin50}\n\t $10x {coin10}')
+        return diff, cantPagada, coin10, coin50
 # AlgortimoPrincipal
 while(flag):
     showArrayProducts(flag)
@@ -61,10 +53,7 @@ while(flag):
     except:
         print("Elección inválida.")
     cont = 1
-checkoutPayment (opcUser,cantPagada,arrayProducts,arrayCoins,)
+diff, cantPagada, coin10, coin50 = checkoutPayment (opcUser,arrayProducts,arrayCoins,)
 if diff == 0:
     print("No hay vuelto.")
-
-
-
     
