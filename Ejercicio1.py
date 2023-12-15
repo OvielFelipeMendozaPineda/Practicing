@@ -3,7 +3,6 @@ import random
 
 numArray = []
 def isNum(flag):
-
         n = int(input("Digite cantidad de números para la lista.\n"))
         if 0 < n < 11:
             for i in range(n):
