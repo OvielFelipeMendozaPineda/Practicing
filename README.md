@@ -1,1 +1,1 @@
-rama para ejercicos de practia
+rama para ejercicos de practica
