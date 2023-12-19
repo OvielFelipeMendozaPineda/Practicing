@@ -13,13 +13,16 @@ arrayNums.sort()
 print(arrayNums)
 
 #Se establece el arreglo con los numeros primos
-cont = 0 
+
 for i in range(len(arrayNums)):
+  cont = 0 
   for j in range(1, arrayNums[i]):
     if arrayNums[i] % j == 0:
         cont += + 1      
-    if cont < 3:
-      arrayNumsPrimos.append(arrayNums[i])
+  if cont > 2:
+    print("no es primo.")
+  else:
+    arrayNumsPrimos.append(arrayNums[i])
 print(arrayNumsPrimos)
 
 
