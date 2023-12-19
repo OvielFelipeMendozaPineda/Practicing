@@ -9,15 +9,16 @@ def ageCal():
     Age = int(input("Ingrese su edad.\n"))
     if Age <= 0:
         print("Numero incorrecto.")
-        ageCal()
+        return True
     else:
         if Age >= 18:
             print("Usted es mayor de edad.")
         else:
             print("Usted es menor de edad.")
+    return False
+
 while(flag):
     try:
-        ageCal()
-        flag = False
+      flag=ageCal()
     except:
         print("Intente nuevamente.")
