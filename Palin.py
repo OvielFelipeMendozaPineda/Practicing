@@ -9,7 +9,7 @@ def isNumPrim(n):
     return n
 
 def makeArray(arrayNums, limMáx):
-    for i in range(10 , limMáx+1):
+    for i in range(2 , limMáx+1):
         res = isNumPrim(i)
         if res is not False:
             arrayNums.append(res)
