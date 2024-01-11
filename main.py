@@ -18,5 +18,7 @@ def menuPrincipal(students, identification):
             break
 
 
-
+students = jSonFun.fromJson("students")
+trainers = jSonFun.fromJson("trainers")
+rutas = jSonFun.fromJson("rutas")
 menuPrincipal(students, identification)
